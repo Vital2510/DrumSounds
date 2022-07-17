@@ -6,7 +6,20 @@ for(var i=0;i<numOfButtons;i++)
 
         var buttonPressed = this.innerHTML;
         
-        switch(buttonPressed)
+        makeSound(buttonPressed);
+    });
+
+}
+
+document.addEventListener("keydown", function(event){
+
+    makeSound(event.key)
+
+})
+
+function makeSound(key)
+{
+    switch(key)
         {
             case "w":
                 var tom1 = new Audio('sounds/tom-1.mp3');
@@ -36,8 +49,5 @@ for(var i=0;i<numOfButtons;i++)
                 var kick = new Audio('sounds/kick-bass.mp3');
                 kick.play();
                 break;
-
         }
-    });
-
 }
